@@ -1,0 +1,62 @@
+//Using playframework
+
+package controllers;
+
+import play.*;
+import play.mvc.*;
+
+import java.util.*;
+
+import models.*; 
+import  play.data.validation.* ;
+
+
+
+public class Application extends Controller {
+    
+    
+
+     public static void index() {
+    
+        Date now = new Date();
+        render(now);
+    }
+     
+    public static void login(String username, String password) {
+        User user = User.find("byUsernameAndPassword", username, password).first();
+        if(user != null) {
+            //session.put("user", user.username);
+            flash.success("Welcome, " + user.fullname);
+            Bloks.list();         
+        }
+        // Oops
+        flash.put("username", username);
+        flash.error("Login failed");
+        index();
+    }
+     
+    
+	
+	public static void form(){
+         //if(id == null) {   
+	//index();
+	//}
+        //Blog post=Blok.find("byId" title).first();
+          render();
+        }
+         
+    
+      public static void form2(Long id){
+//          if(id == null) {
+//            render();
+//        } 
+          Blog anotherpost=Blog.findById(id);
+          render(anotherpost);
+      }   
+
+
+public static void form3(){
+    render();
+}
+
+}

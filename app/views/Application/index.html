@@ -1,0 +1,84 @@
+#{extends 'main.html' /}
+#{set title:'Welcome to VALEBlog' /}
+
+
+
+<script src="public/js/jquery.min.js" type="text/javascript"></script>
+<script src="public/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="public/js/nivo-slider.css" />
+<script type="text/javascript">
+$(window).load(function() {
+	$('.slider').nivoSlider({
+		effect:'random', //Specify sets like: 'fold,fade,sliceDown'
+		slices:10,
+		animSpeed:500, //Slide transition speed
+		pauseTime:10000,
+		startSlide:0, //Set starting Slide (0 index)
+		directionNav:false, //Next & Prev
+		controlNav:false, //1,2,3...
+		directionNavHide:false, //Only show on hover
+		controlNavThumbs:true, //Use thumbnails for Control Nav
+      controlNavThumbsFromRel:true, //Use image rel for thumbs
+		controlNavThumbsSearch: '.jpg', //Replace this with...
+		controlNavThumbsReplace: '_thumb.jpg', //...this in thumb Image src
+		keyboardNav:false, //Use left & right arrows
+		pauseOnHover:true, //Stop animation while hovering
+		manualAdvance:false, //Force manual transitions
+		captionOpacity:0.8, //Universal caption opacity
+		beforeChange: function(){},
+		afterChange: function(){},
+		slideshowEnd: function(){} //Triggers after all slides have been shown
+	});
+});
+</script><style>
+body
+{
+background-color:tan;
+
+}
+
+</style><script type="text/javascript" charset="${_response_encoding}">
+    setInterval(function() {
+        $('section').load('@{index()} #time')
+    }, 1000)
+	
+</script>
+</head>
+
+<body>
+
+			<div class="slider" style="z-index:1" >
+                            <img src="public/images/rihanna.jpg" width="800" height="350"  />
+			  		 <img src="public/images/rihanna1.jpg" width="800" height="350"  />
+                                         <img src="public/images/rihanna2.jpg"  width="800" height="350"/>
+                                         <img src="public/images/rihanna3.jpg" width="800" height="350" />
+                                         
+                                         
+                                        
+			</div>
+    
+    <a href="@{Application.form3()}">Sign Up </a> 
+			<h1 align="center" font="87"> <b>This is a great project for me on Play Framework</b></h1>
+
+<p> You will be able to add,edit,list and view post on this great project.Just get around the site respecting all the norms of it!</p>
+<p> This page was built solely to test some of the  things visitors like to perform on a blog page that makes it interactive
+.Hope you get along well with it.Also we will be pleased if you navigate this site respecting all the 
+terms ass u will be immidiately disconnected if you violate any of the terms</p>
+
+
+<p id="time">
+    <span>${now.format("EEEE',' MMMM dd',' yyyy")}</span>${now.format("hh'h' MM'mn' ss's'")}
+</p>
+</body>
+
+
+
+
+
+</head>
+</html>
+
+
+
+
+

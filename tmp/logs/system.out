@@ -1,0 +1,7 @@
+Listening for transport dt_socket at address: 8000
+00:27:48,365 INFO  ~ Starting C:\Users\Nappy\Blog
+00:27:48,372 WARN  ~ Declaring modules in application.conf is deprecated. Use dependencies.yml instead (module.secure)
+00:27:48,373 INFO  ~ Module secure is available (C:\playframework\modules\secure)
+00:27:48,375 INFO  ~ Module crud is available (C:\playframework\modules\crud)
+00:27:49,926 WARN  ~ You're running Play! in DEV mode
+00:27:50,165 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...

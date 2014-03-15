@@ -1,0 +1,41 @@
+#{set title:'Sign Up' /}
+
+#{ifErrors}
+<div class="error">
+    <p style="color:#c00">Please correct these errors</p>
+        
+</div>	
+#{/ifErrors}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        
+        <form action="@{Bloks.signUp}" method="POST">     
+        
+        <p class="field">
+     <label for = "email">Email : </label>
+     <input id="email" type="text" name="email" value="${flash.email}"> <span class="error" style="color:blue"><br>  #{error "email" /} </span>  
+    </p>
+    <br>
+      
+    
+       <p class="field">
+     <label for = "password">Enter password : </label>
+     <input id="password" type="password" name="password" value="${flash.password}"> <span class="error" style="color:blue"><br>  #{error "password" /} </span>  
+    </p>
+    <br> 
+        
+       <p class="field">
+     <label for = "fullname">Fullname : </label>
+     <input id="fullname" type="text" name="fullname" value="${flash.fullname}"> <span class="error" style="color:blue"><br>  #{error "fullname" /} </span>  
+    </p>
+    <br> 
+    <input type="submit" value="signup">
+        
+        </form>
+    </body>
+</html>

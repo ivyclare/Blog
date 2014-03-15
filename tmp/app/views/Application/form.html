@@ -1,0 +1,49 @@
+
+#{set title:'Add Post' /}
+
+#{ifErrors}
+<div class="error">
+    <p style="color:#c00">Please correct these errors</p>
+        
+</div>	
+#{/ifErrors}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+background-color:tan;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
+</head>
+<a style="color:tan" href="@{Admin.index}">HOME</a>
+ 
+<h2> Add Your Post on this page</h2>
+<form action="@{Bloks.add()}" method="post" >
+    <p class="field">
+     <label for = "title">Title : </label>
+     <input id="title" type="text" name="title" value="${flash.title}"> <span class="error" style="color:blue"><br>  #{error "title" /} </span>  
+    </p>
+    <br>
+    
+	<p class="field">
+	<label for="content">Content :<br></label>
+        <textarea id="content" rows="10" culums="10" name="content" >${flash.content}</textarea> <span class="error" style="color:blue"><br> #{error "content" /} </span>
+        </p>
+	
+	<br>
+	<p class="field">
+	<label for="date">Date :</label>
+        </p>
+	<input type="date" name="postedAt" value="${flash.postedAt}"><span class="error" style="color:blue"><br> #{error "postedAt" /} </span>
+	<br>
+        
+        
+        
+	<input type="submit" value="Add" >
+	</form>
+	

@@ -1,0 +1,34 @@
+#{extends 'admin.html' /}
+#{set title:'Edit' /}
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+background-color:tan;
+}
+
+</style>
+</head>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <p> <h2>You have succeeded in editing your post As below</h2> </p>
+    <h1> Title: ${anotherpost.title}</h1>
+    <h1>Content: ${anotherpost.content}</h1>  <h1>On:${anotherpost.postedAt}</h1>
+    
+    <li> <a href="@{Application.form2(anotherpost.id)}"><h2>Edit Post</h2></a>
+    
+</li>
+    <a href="@{Application.form()}">Add another post</a>
+    </body>
+</html>

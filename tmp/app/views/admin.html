@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Administration</title>		
+        <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>
+        #{get 'moreStyles' /}
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
+        
+        </head>
+    <body id="admin">
+        
+        <div id="header">
+            <div id="logo">
+                VALE. <span>BLOG</span>
+            </div>
+            <ul id="tools">
+                <li>
+                    <a href="@{Secure.logout()}">Log out</a>
+                </li>
+            </ul>
+            
+            <h1>In this phase of the page u will have to choose wat to do in this blog.So go ahead and browse it.</h1>
+        </div>
+        
+        <nav>
+    			
+    			<a id="list" style="color:tan" href="@{Bloks.list()}" >List</a>
+    			<a id="new post" style="color:tan" href="@{Application.form()}" >New post</a>
+       </nav>
+            
+        <p id="footer">
+            Yabe is a (not so) powerful blog engine built with the 
+            <a href="http://www.playframework.org">play framework</a>
+            as a tutorial application.
+        </p>
+        
+    </body>
+</html>

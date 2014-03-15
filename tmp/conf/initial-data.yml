@@ -1,0 +1,28 @@
+# Test data
+
+User(nappy):
+    email:          napp@yahoo.com
+    password:       secret
+    fullname:       Nappy
+    isAdmin:        true
+    
+
+User(daisy):
+    email:          daisy@yahoo.com
+    password:       secret
+    fullname:       Daisy
+    
+    
+User(ayuk):
+    email:          ayuk@yahoo.com
+    password:       secret
+    fullname:       Ayuk 
+    
+Blog(firstpost):
+  title:            This is new
+  content:          >
+                     This is a framework  that also uses an mvc achitecture
+                     to manage various apps like web,mobile,and even desktop apps.
+                     
+                     Nappy Mediak says: 
+                     Learning is all about appreciating what u did not know and abide it.  

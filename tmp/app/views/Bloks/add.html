@@ -1,0 +1,30 @@
+#{extends 'admin.html' /}
+#{set title:'Add post' /}
+
+	
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+background-color:tan;
+}
+
+</style>
+</head>
+<h1> Title: ${post.title}</h1> <br> Content:<br><h1> ${post.content}!</h1>
+<br> On <h1>${post.postedAt}</h1>
+	
+
+
+
+
+<li> <a href="@{Application.form2(post.id)}"><h2>Edit Post</h2></a>
+    
+
+</li>
+	<a href="@{Application.form()}">Add another post</a>
+        
+        <img width="90" height="190" src="C:\Users\Nappy\Pictures\OTHERS\IMG_0005.JPG" alt="some_text">

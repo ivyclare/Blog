@@ -1,0 +1,81 @@
+
+#{set title:'List' /}
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+background-color:tan;
+}
+
+</style>
+</head>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+ <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />   </head>
+    <body>
+         <div id="header">
+            <div id="logo"><h1> VALEBLOG </h1></div>
+            <ul id="tools">
+                <li>
+                   learn how to use <a href="http://www.playframework.org/documentation/latest/">play!</a>
+                </li>
+            </ul>
+            <nav>
+        <a style="color:tan" href="@{Admin.index}">HOME</a>
+        <a id="new post" style="color:tan" href="@{Application.form()}" >New post</a>
+            </nav>
+        </div>
+        <ul id="tools">
+                <li>
+                    <a href="@{Secure.logout()}">Log out</a>
+                </li>
+            </ul>
+        
+        <div>
+            <table>
+	<thead>
+		<tr>
+			<th class="title">Title</th>
+			<th class="content">Content</th>
+			<th class="postedAt">Posted On</th>
+                        <th class="upload">Photo</th>
+                        <th class="views"></th>
+			<th class="edit"></th>
+		</tr>
+	</thead>
+	<tbody>
+	    #{list anotherposts, as:'anotherpost'}
+	    <tr class="contact" contactId="${anotherpost.id}" draggable="true">
+   			<td id="title-${anotherpost.id}">${anotherpost.title}</td>
+   			<td id="content-${anotherpost.id}">${anotherpost.content.substring(0,10)}</td>
+   			<td id="postedAt-${anotherpost.id}">${anotherpost.postedAt?.format('yyyy-MM-dd')}</td>
+                        
+                        <td><a href="@{Bloks.view(anotherpost.id)}">View</a></td>
+   			<td><a href="@{Application.form2(anotherpost.id)}">Edit</a></td>
+                        <td><a href="@{Bloks.delete(anotherpost.id)}">Delete</a></td>
+   		</tr>
+	    #{/list}
+	    <tr>
+	       
+	    </tr>
+	</tbody>
+</table>
+        </div>
+        <p id="footer">
+            VALEBLOG is a (not so) powerful blog engine built with the 
+            <a href="http://www.playframework.org">play framework</a>
+            as a tutorial application.
+        </p
+    </body>
+</html>

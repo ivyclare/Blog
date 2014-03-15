@@ -1,0 +1,37 @@
+
+#{set title:'Add post' /}
+
+	
+
+<!DOCTYPE html>
+<html>
+<head1>
+<style>
+body
+{
+background-color:tan;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
+</head1>
+    <a style="color:tan" href="@{Admin.index}">HOME</a>
+    
+    
+<h1> Title: ${post.title}</h1> <br> Content:<br><h1> ${post.content}!</h1>
+<br> On <h1>${post.postedAt}</h1>
+
+
+
+<img  width="190" height="190" src="@{Bloks.view(post.id)}">
+	
+<nav> <a href="@{Application.form2(post.id)}"><h2>Edit Post</h2></a>
+
+<a href="@{Bloks.delete(post.id)}"><h2>Delete post</h2></a>
+</nav>
+<p id="footer">
+            VALEBLOG is a (not so) powerful blog engine built with the 
+            <a href="http://www.playframework.org">play framework</a>
+            as a tutorial application.
+        </p

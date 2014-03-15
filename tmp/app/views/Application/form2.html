@@ -1,0 +1,47 @@
+#{set title:'FORM' /}
+
+#{ifErrors}
+<div>
+    <p style="color:#c00">Please correct these errors</p>
+        
+</div>	
+#{/ifErrors}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+background-color:tan;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
+</head>
+ 
+
+#{form @Bloks.editSave(anotherpost.id) }
+       
+       <input type="hidden" name="anotherpost.id" value="${anotherpost.id}">
+       
+       
+    <p class="field">
+     <label for = "title">Title : </label>
+     <input id="title" type="text" name="anotherpost.title" value="${anotherpost?.title}" ><span class="error" > #{error 'anotherpost.title'/}</span>  
+    </p>
+    <p class="field">
+	<label for="content">Content :<br></label>
+        <textarea id="content" rows="10" culums="10" name="anotherpost.content">${anotherpost?.content}</textarea> <span class="error" > #{error 'anotherpost.content'/}</span> 
+    </p>
+	
+	
+	<p class="field">
+	<label for="date">Date :</label>
+        <input type="date" name="anotherpost.postedAt" value="${anotherpost?.postedAt?.format('yyyy-MM-dd')}"><span class="error" > #{error 'anotherpost.postedAt'/}</span>
+        </p>
+        <p class="buttons">
+            <a href="@{Bloks.list()}">cancel</a>  or  <input type="submit" value="Save" >
+        </p>
+#{/form}
+	
